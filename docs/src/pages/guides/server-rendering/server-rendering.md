@@ -143,7 +143,12 @@ function renderFullPage(html, css) {
     <html>
       <head>
         <title>My page</title>
-        <style id="jss-server-side">${css}</style>
+        <style
+          id="jss-server-side"
+          dangerouslySetInnerHTML={{
+            __html: css,
+          }}
+        />
       </head>
       <body>
         <div id="root">${html}</div>
